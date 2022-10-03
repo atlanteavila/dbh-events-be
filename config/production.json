@@ -3,6 +3,6 @@
   "port": "PORT",
   "postgres": {
     "client": "pg",
-    "connection": "postgres://cvbkbysooryxxs:142f5c7bdd370a1ae223ea42c53693b23021bf99c0587d72bf8857a42803330a@ec2-3-225-110-188.compute-1.amazonaws.com:5432/d2u23ia3n3839n"
+    "connection": "postgres://cvbkbysooryxxs:142f5c7bdd370a1ae223ea42c53693b23021bf99c0587d72bf8857a42803330a@ec2-3-225-110-188.compute-1.amazonaws.com:5432/d2u23ia3n3839n?ssl=true"
   }
 }
