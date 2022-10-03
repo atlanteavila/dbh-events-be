@@ -1,0 +1,8 @@
+{
+  "host": "events-be-app.feathersjs.com",
+  "port": "PORT",
+  "postgres": {
+    "client": "pg",
+    "connection": "postgres://atlanteavila:@localhost:5432/events_db"
+  }
+}
