@@ -8,10 +8,7 @@
       "database": "d2u23ia3n3839n",
       "user": "cvbkbysooryxxs",
       "password": "142f5c7bdd370a1ae223ea42c53693b23021bf99c0587d72bf8857a42803330a",
-      "port": 5432,
-      "ssl": {
-        "rejectUnauthorized": false
-      }
+      "port": 5432
     }
   }
 }
