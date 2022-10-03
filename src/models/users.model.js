@@ -14,10 +14,12 @@ class Users extends Model {
       required: ['password'],
 
       properties: {
-      
+
         email: { type: ['string', 'null'] },
-        password: 'string',
-      
+        password: { type: 'string' },
+        firstName: { type: 'string' },
+        lastName: { type: 'string' }
+
       }
     };
   }
@@ -38,11 +40,13 @@ module.exports = function (app) {
     if (!exists) {
       db.schema.createTable('users', table => {
         table.increments('id');
-      
+
         table.string('email').unique();
         table.string('password');
-      
-      
+        table.string('firstName');
+        table.string('lastName');
+
+
         table.timestamp('createdAt');
         table.timestamp('updatedAt');
       })
