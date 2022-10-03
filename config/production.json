@@ -4,10 +4,10 @@
   "postgres": {
     "client": "pg",
     "connection": {
-      "host": "ec2-3-225-110-188.compute-1.amazonaws.com",
-      "database": "d2u23ia3n3839n",
-      "user": "cvbkbysooryxxs",
-      "password": "142f5c7bdd370a1ae223ea42c53693b23021bf99c0587d72bf8857a42803330a",
+      "host": "DB_HOST",
+      "database": "DB_DATABASE",
+      "user": "DB_USER",
+      "password": "DB_PASSWORD",
       "port": 5432
     }
   }
