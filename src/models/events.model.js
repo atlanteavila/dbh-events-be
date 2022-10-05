@@ -30,6 +30,7 @@ class Events extends Model {
         locationCity: { type: 'string' },
         locationState: { type: 'string' },
         locationZip: { type: 'string' },
+        userId: { type: 'integer' },
       }
     };
   }
@@ -62,6 +63,7 @@ module.exports = function (app) {
         table.string('locationZip');
         table.timestamp('createdAt');
         table.timestamp('updatedAt');
+        table.foreign().integer('userId').references('users.id')
       })
         .then(() => console.log('Created events table')) // eslint-disable-line no-console
         .catch(e => console.error('Error creating events table', e)); // eslint-disable-line no-console
