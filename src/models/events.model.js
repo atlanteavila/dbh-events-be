@@ -31,6 +31,9 @@ class Events extends Model {
         locationState: { type: 'string' },
         locationZip: { type: 'string' },
         userId: { type: 'integer' },
+        status: {
+          enum: ['Active', 'isArchived', 'Completed', 'isCanceled'],
+        },
       }
     };
   }
@@ -50,17 +53,18 @@ module.exports = function (app) {
   db.schema.hasTable('events').then(exists => {
     if (!exists) {
       db.schema.createTable('events', table => {
-        table.increments('id');
-        table.string('title');
-        table.dateTime('startDate');
-        table.dateTime('endDate');
-        table.integer('price');
+        table.increments('id').required();
+        table.string('title').required();
+        table.dateTime('startDate').required();
+        table.dateTime('endDate').required();
+        table.integer('price').required();
         table.string('locationType').defaultTo('on location');
         table.string('locationURL');
         table.string('locationStreetAddress');
         table.string('locationCity');
         table.string('locationState');
         table.string('locationZip');
+        table.string('status').oneOf(['Active', 'isArchived', 'Complete', 'isCanceled']);
         table.timestamp('createdAt');
         table.timestamp('updatedAt');
         table.foreign().integer('userId').references('users.id')
